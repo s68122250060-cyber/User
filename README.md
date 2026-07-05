@@ -1,18 +1,27 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## ใบงานทบทวนภาษา Java
+ค าชี้แจงส าหรับนักศึกษา
+ให้นักศึกษาท าใบงานนี้เพื่อทบทวนความรู้ภาษา Java ที่จ าเป็นต่อการเรียนเรื่องอัลกอริทึม ได้แก่ ตัว
+แปร เงื่อนไข วนซ ้า อาร์เรย์ เมธอด และการเขียนโปรแกรมแก้ปัญหาเบื้องต้น
+ให้นักศึกษาเขียนโปรแกรมด้วยภาษา Java และส่งไฟล์.java หรืออัปโหลดลง GitHub ตามที่ผู้สอน
+ก าหนด
+จุดประสงค์การเรียนรู้
+หลังจากท าใบงานนี้ นักศึกษาสามารถ
+1. เขียนโปรแกรม Java รับข้อมูลและแสดงผลได้
+2. ใช้ค าสั่ง if-else เพื่อตัดสินใจได้
+3. ใช้ค าสั่ง for และ while เพื่อวนซ ้าได้
+4. ใช้ Array ในการเก็บและประมวลผลข้อมูลได้
+5. เขียน Method เพื่อแบ่งการท างานของโปรแกรมได้
+6. อธิบายขั้นตอนการท างานของโปรแกรมในรูปแบบ Pseudocode ได้
+ตอนที่ 1: ทบทวนค าสั ่งพื้นฐาน Java
+ค าสั ่ง
+ให้นักศึกษาเติมค าตอบให้ถูกต้อง
+1.1 คำสั่งแสดงผลข้อความในภาษา Java คืออะไร
+ตอบ:
+1.2 คำสั่งรับค่าจากแป้นพิมพ์โดยใช้ Scanner ต้อง import อะไร
+ตอบ:
+1.3 คำสั่งใดใช้ตรวจสอบเงื่อนไข
+ตอบ:
+1.4 คำสั่งใดใช้วนซ ้าเมื่อทราบจ านวนรอบแน่นอน
+ตอบ:
+1.5 คำสั่งใดใช้วนซ ้าเมื่อยังไม่ทราบจ านวนรอบแน่นอน
+ตอบ:
