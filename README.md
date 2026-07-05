@@ -34,3 +34,113 @@
 ตอบ: 15   
 ## 2.4โปรแกรมนี้ทำหน้าที่อะไร   
 ตอบ: คำนวณหาผลรวมของตัวเลขตั้งแต่ 1 ถึง 5 
+
+## 3.1 Pseudocode
+START
+    INPUT number
+    IF number MOD 2 == 0 THEN
+        OUTPUT "Even number"
+    ELSE
+        OUTPUT "Odd number"
+    ENDIF
+END
+## 3.2
+import java.util.Scanner;
+
+public class EvenOddChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter number: ");
+        int number = scanner.nextInt(); // รับค่าเลขจำนวนเต็ม [cite: 122]
+        
+        // ใช้เครื่องหมาย % (Modulo) เพื่อหาเศษจากการหาร
+        if (number % 2 == 0) { 
+            System.out.println("Even number"); // หาร 2 ลงตัว เศษเป็น 0 [cite: 123]
+        } else {
+            System.out.println("Odd number");  // หาร 2 ไม่ลงตัว [cite: 124]
+        }
+        
+        scanner.close();
+    }
+}
+
+## 4.1Pseudocode
+START
+    INPUT midtermScore
+    INPUT finalScore
+    totalScore = midtermScore + finalScore
+    OUTPUT "Total score = " + totalScore
+    IF totalScore >= 50 THEN
+        OUTPUT "Pass"
+    ELSE
+        OUTPUT "Fail"
+    ENDIF
+END
+
+## 4.2
+import java.util.Scanner;
+
+public class GradeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter midterm score: ");
+        int midterm = scanner.nextInt(); // รับคะแนนกลางภาค [cite: 139]
+        
+        System.out.print("Enter final score: ");
+        int finalScore = scanner.nextInt(); // รับคะแนนปลายภาค [cite: 140]
+        
+        int totalScore = midterm + finalScore; // คำนวณคะแนนรวม [cite: 141]
+        System.out.println("Total score = " + totalScore);
+        
+        if (totalScore >= 50) {
+            System.out.println("Pass"); // [cite: 142]
+        } else {
+            System.out.println("Fail"); // [cite: 143]
+        }
+        
+        scanner.close();
+    }
+}
+
+## 5.1Pseudocode
+START
+    INPUT num1, num2, num3
+    max = num1 // สมมติให้ตัวแรกมากที่สุดก่อน
+    IF num2 > max THEN
+        max = num2
+    ENDIF
+    IF num3 > max THEN
+        max = num3
+    ENDIF
+    OUTPUT "Maximum number = " + max
+END
+
+## 5.2
+import java.util.Scanner;
+
+public class MaxOfThree {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter number 1: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter number 2: ");
+        int num2 = scanner.nextInt();
+        System.out.print("Enter number 3: ");
+        int num3 = scanner.nextInt(); // [cite: 157]
+        
+        int max = num1; // ขั้นตอนแรก: ตั้งหลักให้ num1 เป็นค่ามากสุดก่อน [cite: 158]
+        
+        if (num2 > max) {
+            max = num2; // ถ้า num2 ดันมากกว่า max ปัจจุบัน ให้เปลี่ยนมาเก็บ num2 แทน [cite: 158]
+        }
+        if (num3 > max) {
+            max = num3; // ถ้า num3 มากกว่า max ปัจจุบัน ให้เปลี่ยนมาเก็บ num3 แทน [cite: 158]
+        }
+        
+        System.out.println("Maximum number = " + max); // [cite: 159]
+        scanner.close();
+    }
+}
