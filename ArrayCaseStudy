@@ -1,0 +1,57 @@
+public class ArrayCaseStudy {
+    public static void main(String[] args) {
+        // 1. กำหนด Array เก็บข้อมูลคะแนนตามโจทย์ (นักศึกษา 10 คน)
+        int[] scores = {6, 8, 4, 9, 7, 5, 10, 3, 8, 2}; // [cite: 26, 27]
+        
+        // ตัวแปรสำหรับคำนวณ [cite: 28]
+        int sum = 0;                  // เก็บผลรวมคะแนน [cite: 30]
+        int max = scores[0];          // สมมติให้ตัวแรกเป็นค่าสูงสุดก่อน [cite: 32]
+        int min = scores[0];          // สมมติให้ตัวแรกเป็นค่าต่ำสุดก่อน [cite: 33]
+        int countPassed = 0;         // นับจำนวนคนทีได้ >= 7 [cite: 34]
+        
+        // 2. วนลูปเพื่อหาผลรวม, ค่าสูงสุด, ค่าต่ำสุด และนับจำนวนคนผ่าน
+        for (int i = 0; i < scores.length; i++) {
+            int score = scores[i];
+            
+            sum += score; // บวกคะแนนสะสมไปเรื่อย ๆ [cite: 30]
+            
+            if (score > max) {
+                max = score; // ถ้าเจอคะแนนที่มากกว่า max ปัจจุบัน ให้เปลี่ยนเป็นค่าใหม่ [cite: 32]
+            }
+            
+            if (score < min) {
+                min = score; // ถ้าเจอคะแนนที่น้อยกว่า min ปัจจุบัน ให้เปลี่ยนเป็นค่าใหม่ [cite: 33]
+            }
+            
+            if (score >= 7) {
+                countPassed++; // ถ้านักศึกษาได้คะแนนตั้งแต่ 7 ขึ้นไป ให้นับเพิ่ม [cite: 34]
+            }
+        }
+        
+        // 3. คำนวณคะแนนเฉลี่ย (ต้องแปลงเป็น double เพื่อให้ได้ทศนิยมที่ถูกต้อง)
+        double average = (double) sum / scores.length; // [cite: 31]
+        
+        // 4. แสดงผลลัพธ์ข้อมูลสถิติพื้นฐาน [cite: 29]
+        System.out.println("=== ระบบวิเคราะห์คะแนนสอบก่อนเรียน ==="); // [cite: 25]
+        System.out.println("คะแนนรวมของนักศึกษาทั้งหมด: " + sum + " คะแนน"); // [cite: 30]
+        System.out.println("คะแนนเฉลี่ย: " + average + " คะแนน"); // [cite: 31]
+        System.out.println("คะแนนสูงสุด: " + max + " คะแนน"); // [cite: 32]
+        System.out.println("คะแนนต่ำสุด: " + min + " คะแนน"); // [cite: 33]
+        System.out.println("จำนวนนักศึกษาที่ได้คะแนนตั้งแต่ 7 คะแนนขึ้นไป: " + countPassed + " คน"); // [cite: 34]
+        
+        // 5. หาและแสดงรายชื่อนักศึกษาที่ควรได้รับการทบทวนเพิ่มเติม (คะแนน < 5)
+        System.out.print("รายชื่อนักศึกษาที่ควรได้รับการทบทวนเพิ่มเติม (คะแนน < 5): "); // [cite: 35]
+        boolean first = true;
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] < 5) { // [cite: 35]
+                if (!first) {
+                    System.out.print(", ");
+                }
+                // สมมติชื่อนักศึกษาเป็น "คนที่ X" ตาม Index + 1
+                System.out.print("นักศึกษาคนที่ " + (i + 1) + " (ได้ " + scores[i] + " คะแนน)"); // [cite: 35]
+                first = false;
+            }
+        }
+        System.out.println();
+    }
+}
