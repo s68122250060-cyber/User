@@ -1,0 +1,36 @@
+import java.util.Stack; // นำเข้าคลาส Stack ของ Java
+
+public class StackCaseStudy {
+    public static void main(String[] args) {
+        // 1. สร้าง Stack สำหรับเก็บคำสั่ง (String)
+        Stack<String> undoStack = new Stack<>(); // [cite: 46]
+        
+        // 2. เพิ่มคำสั่งทั้งหมดลงใน Stack ด้วย push()
+        undoStack.push("Type Data");         // [cite: 40, 47]
+        undoStack.push("Type Structure");    // [cite: 41, 47]
+        undoStack.push("Delete Structure");  // [cite: 42, 47]
+        undoStack.push("Type Algorithm");     // [cite: 43, 47]
+        undoStack.push("Type Java");          // [cite: 44, 47]
+        
+        // 3. แสดงคำสั่งทั้งหมดใน Stack ณ ตอนนี้
+        System.out.println("คำสั่งทั้งหมดใน Stack: " + undoStack); // [cite: 48]
+        System.out.println("----------------------------------------");
+        
+        // 4. ทำการ Undo คำสั่งล่าสุด 2 ครั้ง [cite: 49]
+        System.out.println("--- เริ่มทำการ Undo 2 ครั้ง ---");
+        for (int i = 1; i <= 2; i++) {
+            // 5. ตรวจสอบก่อนเสมอว่า Stack ว่างหรือไม่ เพื่อป้องกันข้อผิดพลาด (EmptyStackException)
+            if (!undoStack.isEmpty()) { // 
+                // pop() คือการเอาข้อมูลตัวบนสุด (ล่าสุด) ออกมา
+                String undoneCommand = undoStack.pop(); // 
+                System.out.println("Undo ครั้งที่ " + i + ": ยกเลิกคำสั่ง -> " + undoneCommand); // [cite: 49, 50]
+            } else {
+                System.out.println("ไม่สามารถ Undo ได้เนื่องจาก Stack ว่างเปล่า");
+            }
+        }
+        System.out.println("----------------------------------------");
+        
+        // 6. แสดงสถานะของ Stack หลังจากผ่านการ Undo ไปแล้ว
+        System.out.println("สถานะของ Stack หลังจาก Undo: " + undoStack); // [cite: 51]
+    }
+}
