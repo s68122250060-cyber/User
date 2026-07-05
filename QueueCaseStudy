@@ -1,0 +1,46 @@
+import java.util.LinkedList; // ต้องใช้คลาสกลุ่ม List มาช่วยสร้าง instance ของ Queue
+import java.util.Queue;      // นำเข้า Interface Queue ของ Java
+
+public class QueueCaseStudy {
+    public static void main(String[] args) {
+        // 1. สร้าง Queue สำหรับเก็บรหัสผู้ป่วย (String)
+        Queue<String> patientQueue = new LinkedList<>(); // [cite: 65]
+        
+        // 2. เพิ่มผู้ป่วย P001 ถึง P005 ลงใน Queue ด้วย add() หรือ offer()
+        patientQueue.add("P001"); // [cite: 57, 66]
+        patientQueue.add("P002"); // [cite: 57, 66]
+        patientQueue.add("P003"); // [cite: 57, 66]
+        patientQueue.add("P004"); // [cite: 57, 66]
+        patientQueue.add("P005"); // [cite: 57, 66]
+        System.out.println("ผู้ป่วยลงทะเบียนเริ่มต้น: " + patientQueue);
+        
+        // 3. ผู้ป่วย P001 และ P002 ได้รับบริการแล้ว -> เอาออกจากคิว 2 คน
+        System.out.println("\n--- เรียกผู้ป่วยเข้ารับบริการ ---");
+        for (int i = 1; i <= 2; i++) {
+            // 4. ตรวจสอบก่อนเสมอว่า Queue ว่างหรือไม่ เพื่อไม่ให้เกิดข้อผิดพลาด
+            if (!patientQueue.isEmpty()) { // [cite: 72]
+                // remove() หรือ poll() จะนำข้อมูลตัวหน้าสุด (เก่าสุด) ออกมา
+                String servedPatient = patientQueue.remove(); // 
+                System.out.println("เรียกผู้ป่วย: " + servedPatient + " เข้ารับบริการเรียบร้อย"); // [cite: 60, 67]
+            }
+        }
+        
+        // 5. มีผู้ป่วยใหม่ P006 และ P007 มาลงทะเบียนเพิ่ม (ต่อท้ายคิว)
+        patientQueue.add("P006"); // [cite: 61, 68]
+        patientQueue.add("P007"); // [cite: 61, 68]
+        System.out.println("มีผู้ป่วยใหม่ (P006, P007) มาลงทะเบียนเพิ่ม..."); // [cite: 61]
+        
+        // 6. เจ้าหน้าที่ต้องการทราบผู้ป่วยคนถัดไปโดยใช้ peek() (ดูเฉย ๆ ไม่ดึงออก)
+        if (!patientQueue.isEmpty()) {
+            String nextPatient = patientQueue.peek(); // 
+            System.out.println("\nผู้ป่วยคนถัดไปที่จะได้รับบริการคือ: " + nextPatient); // [cite: 62, 69]
+        }
+        
+        // 7. เจ้าหน้าที่ต้องการทราบจำนวนผู้ป่วยที่ยังรออยู่โดยใช้ size()
+        int waitingCount = patientQueue.size(); // 
+        System.out.println("จำนวนผู้ป่วยที่ยังนั่งรออยู่: " + waitingCount + " คน"); // [cite: 63, 70]
+        
+        // 8. แสดงสถานะทั้งหมดของ Queue ปัจจุบัน
+        System.out.println("สถานะผู้ป่วยในคิวปัจจุบัน: " + patientQueue); // [cite: 71]
+    }
+}
